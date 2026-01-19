@@ -10,6 +10,10 @@ export default defineConfig({
 			"@": "/src",
 		},
 	},
+	server: {
+		port: 3333,
+		strictPort: true,
+	},
 	test: {
 		environment: "jsdom",
 		globals: true,
