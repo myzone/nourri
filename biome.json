@@ -1,0 +1,37 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"noUnusedImports": "error",
+				"noUnusedVariables": "error"
+			},
+			"style": {
+				"noNonNullAssertion": "warn"
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineWidth": 100
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"semicolons": "always"
+		}
+	},
+	"files": {
+		"includes": ["**", "!dist", "!node_modules", "!.vite", "!**/routeTree.gen.ts"]
+	}
+}
