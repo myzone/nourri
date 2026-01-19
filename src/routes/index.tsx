@@ -1,13 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { UnifiedTimeline } from "@/components/calendar/UnifiedTimeline";
 
 export const Route = createFileRoute("/")({
-	component: HomePage,
+	component: SchedulePage,
 });
 
-function HomePage() {
-	return (
-		<main className="flex min-h-screen items-center justify-center">
-			<h1 className="text-4xl font-bold">Nourri</h1>
-		</main>
-	);
+function SchedulePage() {
+	return <UnifiedTimeline />;
 }
