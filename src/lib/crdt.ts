@@ -3,16 +3,23 @@ import * as Y from "yjs";
 
 export const doc = new Y.Doc();
 
-export const persistence = new IndexeddbPersistence("nourri", doc);
+const persistence = new IndexeddbPersistence("nourri", doc);
 
 persistence.on("synced", () => {
-	console.log("CRDT synced with IndexedDB");
+	// CRDT synced with IndexedDB
 });
 
-export function getMap<T>(name: string): Y.Map<T> {
+function getMap<T>(name: string): Y.Map<T> {
 	return doc.getMap<T>(name);
 }
 
-export function getArray<T>(name: string): Y.Array<T> {
+function getArray<T>(name: string): Y.Array<T> {
 	return doc.getArray<T>(name);
 }
+
+// === Store bindings ===
+
+export const householdMap = getMap<unknown>("household");
+export const membersArray = getArray<unknown>("members");
+export const mealSlotsArray = getArray<unknown>("mealSlots");
+export const cookingSlotsArray = getArray<unknown>("cookingSlots");

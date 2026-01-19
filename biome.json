@@ -31,6 +31,12 @@
 			"semicolons": "always"
 		}
 	},
+	"css": {
+		"parser": {
+			"cssModules": true,
+			"tailwindDirectives": true
+		}
+	},
 	"files": {
 		"includes": ["**", "!dist", "!node_modules", "!.vite", "!**/routeTree.gen.ts"]
 	}
